@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    {% if title %}
+    <title>{{ title }} - Pitch-App</title>
+    {% else %}
+    <title>Welcome to Pitch-App</title>
+    {% endif %}
+</head>
+
+<body>
+    <div>
+        Pitch-App:
+        <a href="{{url_for('index')}}">Home</a>
+        <a href="{{url_for('login')}}">Log In</a>
+    </div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>
+            {{message}}
+        </li>
+        {%endfor %}
+    </ul>
+    {% endif%}
+    {% endwith%}
+    {% block content %}{% endblock %}
+</body>
+
+</html>
