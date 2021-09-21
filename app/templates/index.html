@@ -1,8 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    <!-- <h1>Hi, {{ current_user.username }}!</h1> -->
+    <!-- {% for post in posts %} -->
+    <!-- <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div> -->
+    <!-- {% endfor %} -->
+
+    <div>
+       <h1>Technology Pitches</h1>
+       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, quisquam alias inventore eum eos deleniti deserunt provident ea fugit, numquam hic molestiae aspernatur odit consequatur laborum sapiente. Dolore, magnam molestias.</p>
+       <a href="{{url_for('main.technology')}}"> <button>view</button></a>
+    </div>
+    <div>
+        <h1>Travels</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem sequi, sit repellendus officiis debitis obcaecati? Totam atque aliquid architecto quam, ex esse mollitia odio quasi, excepturi et necessitatibus minus recusandae?</p>
+        <a href="{{url_for('main.travels')}}"> <button>view</button></a>
+    </div>
+
+    <div>
+        <h1>Sports</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem sequi, sit repellendus officiis debitis obcaecati? Totam atque aliquid architecto quam, ex esse mollitia odio quasi, excepturi et necessitatibus minus recusandae?</p>
+        <a href="{{url_for('main.sports')}}"> <button>view</button></a>
+    </div>
+   
 {% endblock %}
