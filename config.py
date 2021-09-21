@@ -15,6 +15,7 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    SECRET_KEY='halima'
 
 
 class ProdConfig(Config):
@@ -28,7 +29,7 @@ class ProdConfig(Config):
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:access@localhost/pitching'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:access@localhost/pitches'
 
 class DevConfig(Config):
     '''
@@ -37,7 +38,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:access@localhost/pitching'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:access@localhost/pitches'
     DEBUG = True
     
 config_options = {

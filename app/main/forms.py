@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField, SelectField
-from wtforms.validators import required
+from wtforms.validators import required, Required
 
 
 class PitchForm(FlaskForm):
@@ -13,3 +13,9 @@ class PitchForm(FlaskForm):
 class CommentForm(FlaskForm):
     text = TextAreaField('yoursay')
     submit = SubmitField('submit')
+    
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you',validators=[Required()])
+    
+    submit = SubmitField('Submit')
+        

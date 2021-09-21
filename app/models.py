@@ -10,8 +10,10 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(64),index=True, unique=True)
     email = db.Column(db.String(120),index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    pitch = db.relationship('Pitch', backref='author', lazy='dynamic')
-    comment = db.relationship('Comment', backref='author', lazy='dynamic')
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
+    pitch = db.relationship('Pitch', backref='user', lazy='dynamic')
+    comment = db.relationship('Comment', backref='user', lazy='dynamic')
     
     @property
     def password(self):
@@ -39,7 +41,7 @@ class Pitch(db.Model):
     content = db.Column(db.String)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     category = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('author.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comment = db.relationship('Comment', backref='pitch_id', lazy='dynamic')
     likes = db.Column(db.Integer)
     dislikes = db.Column(db.Integer)
@@ -55,7 +57,7 @@ class Pitch(db.Model):
     
     @classmethod 
     def get_pitch(cls, id):
-        pitch = pitch.query.filter_by(id = id).first()
+        pitch = Pitch.query.filter_by(id = id).first()
         return pitch
         
         
@@ -73,12 +75,10 @@ class Comment(db.Model):
     @classmethod
     def get_comments(cls, pitch):
         comments = Comment.query.filter_by(pitch_id = pitch).all()
-        return comments  () 
+        return comments  
           
     
  
  
     
-# @login.user_loader
-# def load_user(id):
-#     return User.query.get(int(id))  
+ 

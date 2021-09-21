@@ -25,5 +25,5 @@ def test():
 def make_shell_context():
     return dict(app = app,db = db,User = User )
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     manager.run()
