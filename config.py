@@ -13,7 +13,7 @@ class Config:
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'halimay97@gmail.com'
+    MAIL_USERNAME = 'hcheptoo0@gmail.com'
     MAIL_PASSWORD = '0719448256'
     
 
