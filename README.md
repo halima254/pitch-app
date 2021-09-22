@@ -29,6 +29,12 @@ on your terminal, switch to virtual environment
 Run: chmod a + x start.sh ; this is to make the program excecutable
 Run the app: start.sh
 
+## screenshots
+![home](app/static/assets/pitchome.png)
+![signup](app/static/assets/signup.png)
+![create_pitch](app/static/assets/create.png)
+![profile](app/static/assets/profile.png)
+
 # licence
 Copyright 2021 | Halima Yahya
 
