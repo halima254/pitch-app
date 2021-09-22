@@ -4,7 +4,7 @@ class Config:
     '''
     General configuration parent class
     '''
-
+    SECRET_KEY='halima'
     # SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_UR')
@@ -15,7 +15,7 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = 'halimay97@gmail.com'
     MAIL_PASSWORD = '0719448256'
-    SECRET_KEY='halima'
+    
 
 
 class ProdConfig(Config):
